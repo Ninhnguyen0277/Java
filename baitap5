@@ -1,0 +1,20 @@
+package baitap;
+
+import java.util.Scanner;
+
+public class baitap5 {
+    public static void main(String[] args){
+    	int a ;
+    	int s =1;
+    	Scanner sc=new Scanner(System.in);
+    	do {
+    		System.out.print("nhap so nguyen bat ky");
+    		a=sc.nextInt();
+    		s+=a;
+    	}while(s<100);
+    	System.out.print("tong cac so nguyen vua nhap="+s);
+    	sc.close();
+    }
+
+
+}
