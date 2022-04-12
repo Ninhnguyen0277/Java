@@ -14,7 +14,6 @@ public class App74 {
             System.out.println("Nhap phan tu thu"+i+":");
             A[i]=sc.nextInt();
         }
-        //Tinh tong cac so chan co trong mang
         int tong=0;
         for(int i=0;i<n;i++){
             if(A[i]%2==0){

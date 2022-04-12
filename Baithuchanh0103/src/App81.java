@@ -18,7 +18,6 @@ public class App81 {
                 X[i][j]=sc.nextInt();
             }
         }
-        //tim phan tu co gia tri lon nhat trong ma tran
         int max=X[0][0];
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
