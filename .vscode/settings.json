@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
         "Baithuchanh305/src",
+        "Baithuchanh1005/src",
         "BaiThucHanh2604/src",
         "BaiThucHanh0305/src",
-        "Baithuchanh1005/src"
+        "baithuchanh1705/src"
     ]
 }
