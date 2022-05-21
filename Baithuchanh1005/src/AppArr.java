@@ -1,34 +1,57 @@
 import java.util.ArrayList;
 public class AppArr {
-    private int manhanvien;
-    private String Hotennhanvien;
-    private String Diachi;
-    public int getmanhanvien() {
-        return manhanvien;
+    private ArrayList<NhanVien> danhSach;
+
+    public AppArr() {
+        this.danhSach = new ArrayList<NhanVien>();
     }
-    public void setmanhanvien(int manhanvien) {
-        this.manhanvien=manhanvien;
+
+    public AppArr(ArrayList<NhanVien> danhSach) {
+        this.danhSach = danhSach;
     }
-    public String getDiachi() {
-        return Diachi;
+
+    public void themNhanVien(NhanVien nv) {
+        this.danhSach.add(nv);
     }
-    public void setDiachi(String Diachi) {
-        this.Diachi=Diachi;
-    }
-    public String getHotennhanvien() {
-        return Hotennhanvien;
-    }
-    public void setHotennhanvien(String Hotennhanvien) {
-        this.Hotennhanvien=Hotennhanvien;
-    }
-    public static void main(String[] arg) {
-        ArrayList<String> hotenArrayList=new ArrayList<>();
-        hotenArrayList.add("nguyen van a");
-        hotenArrayList.add("nguyen van b");
-        hotenArrayList.add("nguyen van c");
-        System.out.println();
-        for(int i=0;i<hotenArrayList.size();i++){
-            System.out.println(hotenArrayList.get(i));
+
+    public void inDanhSachNhanVien() {
+        for (NhanVien nhanVien : danhSach) {
+            System.out.println(nhanVien);
         }
     }
+    public int laySoLuongNhanVien() {
+        return this.danhSach.size();
+    }
+
+    public void lamRongDanhSach() {
+        this.danhSach.removeAll(danhSach);
+    }
+
+    public void timNhanVien(String ten) {
+        for (NhanVien nhanVien : danhSach) {
+            if(nhanVien.getName().indexOf(ten)>=0) {
+                System.out.println(nhanVien);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(in);
+        AppArr arr = new AppArr();
+                System.out.println("Nhập họ và tên: "); String name = sc.nextLine();
+                System.out.println("Nhập mã nhân viên: "); String id = sc.nextLine();
+                System.out.println("Nhập địa chỉ: "); String address = sc.nextLine();
+                NhanVien nv= new NhanVien(name, id,address );
+                arr.themNhanVien(nv);
+
+                arr.inDanhSachNhanVien();
+
+                System.out.println("Số lượng hiện tại: "+ arr.laySoLuongNhanVien());
+
+                System.out.println("Nhập họ và tên: ");
+                name = sc.nextLine();
+                System.out.println("Kết quả tìm kiếm: ");
+                arr.timNhanVien(name);
+                arr.lamRongDanhSach();
+            }
+
 }
